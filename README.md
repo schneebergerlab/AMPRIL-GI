@@ -4,7 +4,9 @@ The scripts used in the project "The evolutionary dynamics of genetic incompatib
 
 ## step 1: get the SNP markers based on the whole genome resequencing data from the parents
 
-###  map reads and call SNPs using shore pipeline http://shore.sourceforge.net/wiki/
+###  map reads and call SNPs using shore pipeline 
+http://shore.sourceforge.net/wiki/
+
 shore import -v Fastq -Q illumina -x -y -o --rplot
 
 shore mapflowcell -f -i -n 10 -g 7 -c 30 -p  --rplot
