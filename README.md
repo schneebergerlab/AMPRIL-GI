@@ -1,7 +1,7 @@
 # AMPRIL-GI
 The scripts used in the project "The evolutionary dynamics of genetic incompatibilities introduced by duplicated genes in Arabidopsis thaliana"
 
-## genotyping
+## AMPRIL population genotyping 
 
 ## GWAS
 1) run gwas, e.g.: with the phenotype of presence of non-functionalized HPA copy 
