@@ -21,15 +21,16 @@ shore merge -m -o  -p
 shore consensus -n -f -o -i -g 5 -a -r
 
 #Example:
-bsub "shore import -v Fastq -Q illumina -x 357_F_CTTGTA_L002_R1.fastq -y 357_F_CTTGTA_L002_R2.fastq -o /projects/dep_coupland/grp_nordstrom/sequencing/Athal/genome/ampril/F/flowc/ --rplot"
 
-bsub "shore mapflowcell -f /projects/dep_coupland/grp_nordstrom/sequencing/Athal/genome/ampril/F/flowc/ -i /projects/dep_coupland/grp_nordstrom/data/Athal/TAIR10/shore_new/TAIR10_chr_all.fas.shore -n 10 -g 7 -c 30 -p  --rplot"
+shore import -v Fastq -Q illumina -x 357_F_CTTGTA_L002_R1.fastq -y 357_F_CTTGTA_L002_R2.fastq -o /flowc/ --rplot
 
-bsub "shore correct4pe -l /projects/dep_coupland/grp_nordstrom/sequencing/Athal/genome/ampril/H/flowc/1 -x 260 -e 1 -p"
+shore mapflowcell -f flowc/ -i TAIR10_chr_all.fas.shore -n 10 -g 7 -c 30 -p  --rplot
 
-shore merge -m /projects/dep_coupland/grp_nordstrom/sequencing/Athal/genome/ampril/A/flowc/1/1/map.list.1.gz,/projects/dep_coupland/grp_nordstrom/sequencing/Athal/genome/ampril/A/flowc/1/2/map.list.2.gz -o /projects/dep_coupland/grp_nordstrom/sequencing/Athal/genome/ampril/A -p
+shore correct4pe -l flowc/1 -x 260 -e 1 -p
 
-shore consensus -n A -f /projects/dep_coupland/grp_nordstrom/data/Athal/TAIR10/shore_new/TAIR10_chr_all.fas.shore -o /projects/dep_coupland/grp_nordstrom/sequencing/Athal/genome/ampril/A/consensus -i /projects/dep_coupland/grp_nordstrom/sequencing/Athal/genome/ampril/A/map.list.gz -g 5 -a /projects/dep_coupland/grp_nordstrom/bin/shore/shore_current/shore/Analysis/scoring_matrices/scoring_matrix_hom.txt -v -r
+shore merge -m map.list.1.gz,map.list.2.gz -o A -p
+
+shore consensus -n A -f TAIR10_chr_all.fas.shore -o A/consensus -i A/map.list.gz -g 5 -a bin/shore/shore_current/shore/Analysis/scoring_matrices/scoring_matrix_hom.txt -v -r
 
 
 ## step 2: map reads of AMPRIL population RAD-seq. 
@@ -64,6 +65,7 @@ perl allele_count_from_map_list2.pl -n name -m map.list -p marker -r restriction
 #output files, e.g: allele_count.population_corrected.txt
 
 #plant_id:189
+
 1   83  M   0   0   0   0   0   T C T T
 
 1   92  M   0   0   0   0   0   C C A A
