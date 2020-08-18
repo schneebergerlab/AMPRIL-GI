@@ -1,15 +1,10 @@
 
 The scripts used in the project "The evolutionary dynamics of genetic incompatibilities introduced by duplicated genes in Arabidopsis thaliana"
 
-# AMPRIL population genotyping 
-#/biodata/dep_mercier/grp_schneeberger/projects/ampril_sequencing/MappingPopulation
-#/archive/biodata/dep_mercier/grp_schneeberger/projects/Genotyping/data/sim_data/population/4parents/
-
-http://shore.sourceforge.net/wiki/
 
 ## step 1: get the SNP markers based on the whole genome resequencing data from the parents
 
-###  map reads and call SNPs
+###  map reads and call SNPs using shore pipeline http://shore.sourceforge.net/wiki/
 shore import -v Fastq -Q illumina -x -y -o --rplot
 
 shore mapflowcell -f -i -n 10 -g 7 -c 30 -p  --rplot
