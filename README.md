@@ -1,7 +1,7 @@
 
 The scripts used in the project "The evolutionary dynamics of genetic incompatibilities introduced by duplicated genes in Arabidopsis thaliana"
 
-
+# AMPRIL population genotyping
 ## step 1: get the SNP markers based on the whole genome resequencing data from the parents
 
 ###  map reads and call SNPs using shore pipeline 
@@ -93,7 +93,7 @@ perl create_break_file.pl -m allele_count.population_corrected.TE_filtered.txt.b
  
 
 
-# GWAS
+# GWAS in natural population
 1) run gwas, e.g.: with the phenotype of presence of non-functionalized HPA copy 
 
 Rscript gwas.LM.multipro.r gwas.data.Rdata HPA.phenotype.01.txt HPA 20
