@@ -31,7 +31,7 @@ shore consensus -n A -f /projects/dep_coupland/grp_nordstrom/data/Athal/TAIR10/s
 
 
 ## step 2: map reads of AMPRIL population RAD-seq. 
-## import reads
+### import reads
 shore import -v Fastq -a genomic -Q sanger -r barcodes.txt -x run2.lane4.reads_1.fastq.gz run2.lane4.reads_2fastq.gz -o flowcell --rplot -h 1
 
 ### map reads from whole sequencing run of pooled samples
